@@ -1,0 +1,125 @@
+body {
+  background-color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h5 {
+  color: #0A3D62;
+}
+
+p, figcaption {
+  color: #FFFFFF;
+}
+
+.login-container input {
+  border: 1px solid #145A32;
+  border-radius: 5px;
+}
+
+.login-container button {
+  background-color: #0A3D62;
+  color: #fff;
+  border: none;
+}
+
+.login-container a {
+  color: #0A3D62;
+  text-decoration: none;
+   width: 400px;
+}
+
+.logo-login {
+  width: 400px;      
+  max-height: 100%; 
+  object-fit: contain; 
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}
+
+body > div:not(.fondo-blanco),
+body > header {
+  position: relative;
+  z-index: 1;
+}
+
+.fondo-blanco {
+  position: fixed;    
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 0;
+}
+
+.header-translucido {
+  background-color: rgba(10, 61, 98, 0.4); 
+  backdrop-filter: blur(2px); 
+  -webkit-backdrop-filter: blur(2px);
+  color: white;
+}
+
+body > .contenido-principal {
+  position: relative;
+  z-index: 1;
+  height: 100%; /* para usar todo el vh-100 */
+}
+
+/* Ajusta los tamaños de logo y contenedor */
+.logo-login {
+  width: 400px;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.login-container {
+  max-width: 400px;
+  background-color: transparent !important;
+  padding: 2rem !important;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.15);
+  border: 3px solid #0A3D62;
+}
+
+
+.text-azul {
+  color: #0A3D62; 
+}
+
+.text-verde {
+  color: rgba(20, 90, 50, 0.4); 
+}
+
+.logo-smart {
+  border: 2px solid #ccc; 
+  border-radius: 10px; 
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); 
+  background-color: white; 
+  padding: 5px; /
+}
+
+.login-container {
+  max-width: 400px;
+  background-color: transparent !important; 
+  padding: 2rem 2rem 2rem 2rem !important; 
+  border-radius: 0.75rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.15);
+  border: 3px solid #0A3D62;
+}
+
+.logo-login {
+  width: 400px;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+

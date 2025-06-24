@@ -19,7 +19,7 @@ body {
 header {
   display: flex;
   align-items: center;
-  background-color: #145A32;
+  background-color: #138505;
   color: white;
   padding: 1rem 2rem;
   gap: 1rem;
@@ -85,7 +85,7 @@ main::before {
 }
 
 .accion {
-  background-color: #1E8449;
+  background-color: #15b909;
   color: white;
   height: 140px;
   border-radius: 12px;
@@ -100,7 +100,7 @@ main::before {
 }
 /*Efecto hoover de opciones*/
 .accion:hover {
-  background-color: #145A32;
+  background-color: #138505;
   transform: translateY(-5px);
 }
 /*Estilos para los íconos*/
@@ -125,7 +125,7 @@ main::before {
   position: absolute;
   top: 140px; /* Justo debajo del cuadro principal */
   width: 100%;
-  background-color: #1E8449;
+  background-color: #17a50d;
   border-radius: 0 0 12px 12px;
   padding: 15px 0;
   box-shadow: 0 4px 8px rgba(11, 120, 40, 0.3);
@@ -148,7 +148,7 @@ main::before {
 }
 /* Efecto hoover para las opciones de curso*/
 .opcion-curso:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(76, 128, 42, 0.192);
 }
 /* FOOTER*/
 footer {

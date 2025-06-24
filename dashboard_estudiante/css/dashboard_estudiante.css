@@ -1,0 +1,160 @@
+/* dashboard_estudiante.css */
+
+/* GENERAL*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  background-color: #145A32;
+  color: white;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  height: 70px;
+}
+/*Estilo del logo en el header*/
+header .logo {
+  height: 50px;
+  width: auto;
+}
+/*Estilo del título en el header*/
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+/*MAIN*/
+main {
+  flex: 1;
+  padding: 2rem;
+  background-image: url('../images/fondo_campuslife.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+/*Capa semitransparente*/
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 0;
+}
+/*BIENVENIDA*/
+.bienvenida {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.bienvenida h2 {
+  color: #1C2833;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+/*ACCIONES PRINCIPALES*/
+.acciones {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.accion, .accion-contenedor {
+  width: 140px;
+}
+
+.accion {
+  background-color: #1E8449;
+  color: white;
+  height: 140px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(11, 120, 40, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+/*Efecto hoover de opciones*/
+.accion:hover {
+  background-color: #145A32;
+  transform: translateY(-5px);
+}
+/*Estilos para los íconos*/
+.accion i {
+  margin-bottom: 0.8rem;
+  font-size: 2rem;
+}
+/*Contenedor de subopciones*/
+.accion-contenedor {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.accion-contenedor.abierto {
+  margin-bottom: 90px; /* Espacio para las opciones al abrirse */
+}
+
+.subopciones-cursos {/*Ocultas por defecto*/
+  display: none;
+  position: absolute;
+  top: 140px; /* Justo debajo del cuadro principal */
+  width: 100%;
+  background-color: #1E8449;
+  border-radius: 0 0 12px 12px;
+  padding: 15px 0;
+  box-shadow: 0 4px 8px rgba(11, 120, 40, 0.3);
+  z-index: 2;
+}
+
+/*Enlaces en subopciones*/
+.subopciones-cursos a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+/*Opciones del curso*/
+.opcion-curso {
+  color: white;
+  padding: 10px 0;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+/* Efecto hoover para las opciones de curso*/
+.opcion-curso:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+/* FOOTER*/
+footer {
+  background-color: #145A32;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+}

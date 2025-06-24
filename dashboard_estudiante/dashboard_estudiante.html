@@ -1,0 +1,75 @@
+<!--dashboard_estudiante.html-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Smart Campus - Dashboard Estudiante</title>
+  <!--Enlace a Font Awesome para los íconos-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/dashboard_estudiante.css">
+
+  /*Cuerpo*/
+</head>
+<body>
+  <header>
+    <img src="images/Smart_Campus_Logo.png" alt="Logo Smart Campus" class="logo">   <!--logo-->
+    <h1>Dashboard Estudiante</h1>
+  </header>
+
+  <main>
+    <div class="bienvenida">
+      <h2> ¡Bienvenid@ a tu Smart Campus!</h2>
+    </div>
+    
+    <section class="acciones">
+      
+      <!--Contenedor para las subopciones de cursos-->
+      <div class="accion-contenedor" id="cursos-contenedor">
+        <div class="accion" id="cursos-btn">
+          <i class="fas fa-book fa-2x"></i>
+          <h3>Cursos</h3>
+        </div>
+        <!--Menú desplegable y enlace a cursos_activos.html-->
+        <div class="subopciones-cursos" id="subopciones-cursos">
+          <a href="cursos_activos.html" class="opcion-curso">Cursos Activos</a>
+          <div class="opcion-curso">Cursos Pasados</div>
+        </div>
+      </div>
+      <!--Otras opciones del menú-->
+      <div class="accion">
+        <i class="fas fa-clipboard-list fa-2x"></i>
+        <h3>Calificaciones</h3>
+      </div>
+      
+      <div class="accion">
+        <i class="fas fa-calendar-check fa-2x"></i>
+        <h3>Asistencia</h3>
+      </div>
+      <div class="accion">
+        <i class="fas fa-bell fa-2x"></i>
+        <h3>Notificaciones</h3>
+      </div>
+    </section>
+  </main>
+
+  <!--FOOTER-->
+  <footer> <!--Pie de página con derechos de autor-->
+    <p>&copy; 2025 Smart Campus. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    //Maneja el despliegue de subopciones
+    document.getElementById('cursos-btn').addEventListener('click', function() {
+      //Evento al presionar la opción de Cursos
+      const contenedor = document.getElementById('cursos-contenedor');
+      const subopciones = document.getElementById('subopciones-cursos');
+      
+      //Maneja el abrir de las opciones y cambia el display de subopciones
+      contenedor.classList.toggle('abierto');
+      subopciones.style.display = subopciones.style.display === 'block' ? 'none' : 'block';
+    });
+  </script>
+</body>
+</html>

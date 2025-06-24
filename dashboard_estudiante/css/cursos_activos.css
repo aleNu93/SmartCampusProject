@@ -1,0 +1,133 @@
+/* cursos_activos.css */
+
+/* GENERAL */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f9;
+  color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* HEADER */
+header {
+  background-color: #145A32;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* LOGO */
+.logo {
+  height: 50px;
+}
+
+/* MAIN con fondo */
+main {
+  flex: 1;
+  padding: 2rem;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/*Elemento semitransparente*/
+main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.75);
+  z-index: 0;
+}
+
+main > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Contenido principal */
+.bienvenida h2 {
+  color: #1C2833;
+  margin-bottom: 0.5rem;
+}
+
+.bienvenida p {
+  font-size: 1rem;
+  color: #1C2833;
+  margin-bottom: 2rem;
+}
+/* grid de cursos */
+.grid-cursos h2 {
+  margin-bottom: 1rem;
+  color: #1E8449;
+}
+
+/*Contenedor del grid de cursos */
+.cursos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/*Tarjeta individual del curso */
+.curso {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/*Efecto de hoover*/
+.curso:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/*Imagen de curso*/
+.curso img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.curso-info {
+  padding: 1rem;
+}
+/*Título de curso*/
+.curso h3 {
+  font-size: 1.1rem;
+  color: #145A32;
+  margin-bottom: 0.5rem;
+}
+/*Código de curso*/
+.curso .codigo {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-bottom: 0.3rem;
+}
+/*Horario de curso*/
+.curso .horario {
+  font-size: 0.9rem;
+  color: #e74c3c;
+  font-weight: 500;
+}
+
+/* FOOTER */
+footer {
+  background-color: #145A32;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,197 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #F4F6F7;
+  color: #1C2833;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #0A3D62;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+  margin-right: 1rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+nav {
+  background-color: #1E8449;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav li {
+  flex-grow: 1;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: white; 
+  text-decoration: none;
+  transition: background 0.3s;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background-color: #145A32;
+  color: #A9DFBF; 
+}
+
+main {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+footer {
+  background-color: #0A3D62;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+/* ------------------------ */
+/* SECCIÓN: TAREAS ASIGNADAS */
+/* ------------------------ */
+
+.tareas-asignadas {
+  max-width: 900px;
+  margin: 2rem auto;
+  background-color: #F8F9F9;
+  border: 1px solid #D5D8DC;
+  border-radius: 6px;
+  padding: 1rem 2rem;
+}
+
+.titulo-tareas h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #1C2833;
+  border-bottom: 1px solid #D5D8DC;
+  padding-bottom: 0.5rem;
+    text-align: center;
+}
+
+.lista-tareas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-tareas li {
+  border-top: 1px solid #E5E7E9;
+  padding: 1rem 0;
+}
+
+.lista-tareas li:first-child {
+  border-top: none;
+}
+
+.titulo-tarea {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #154360;
+  text-decoration: none;
+}
+
+.titulo-tarea:hover {
+  text-decoration: underline;
+}
+
+.detalles-tarea {
+  font-size: 0.95rem;
+  color: #566573;
+  margin-top: 0.3rem;
+}
+
+/* ------------------------ */
+/* SECCIÓN: ENTREGAS        */
+/* ------------------------ */
+
+.titulo-seccion {
+  text-align: center;
+  font-size: 2rem;
+  color: #0A3D62;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.descripcion-seccion {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #1C2833;
+  margin-bottom: 2rem;
+}
+
+.tabla-entregas {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+table {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #0A3D62;
+  color: white;
+}
+
+input[type="number"] {
+  width: 80px;
+  padding: 0.4rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.asignar-btn {
+  background-color: #1E8449;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.asignar-btn:hover {
+  background-color: #145A32;
+}

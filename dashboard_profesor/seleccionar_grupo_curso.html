@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seleccionar Grupo - Smart Campus</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/seleccionar_grupo_curso.css" />
+  <style>
+    /* General */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f6;
+      color: #2c3e50;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 2rem;
+      background-color: #0A3D62;
+      color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    header .logo {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    /* MAIN con fondo */
+    main {
+      flex-grow: 1;
+      position: relative;
+      background-image: url('images/grupo_curso.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    main::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255, 255, 255, 0.75);
+      z-index: 0;
+    }
+
+    .contenido {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bienvenida h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .bienvenida p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Grid de grupos */
+    .grid-grupos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Cada grupo con imagen */
+    .grupo {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+
+    .grupo:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .grupo img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-bottom: 3px solid #0A3D62;
+      border-radius: 12px 12px 0 0;
+    }
+
+    .grupo h3 {
+      margin: 1rem 0 0.5rem 0;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #0A3D62;
+      padding: 0 0.5rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #0A3D62;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/Smart_Campus_Logo.png" alt="Logo Smart Campus" class="logo">
+    <h1>Seleccionar Grupo</h1>
+  </header>
+
+  <main>
+    <div class="contenido">
+      <section class="bienvenida">
+        <h2>Curso: Fundamentos de Tecnologías de la Información</h2>
+        <p>Seleccione un grupo para gestionar sus actividades.</p>
+      </section>
+
+      <section class="grid-grupos">
+        <div class="grupo">
+          <img src="images/calendario.png" alt="Calendario Grupo 01" />
+          <h3>Grupo 01</h3>
+          <p>Lunes y Miércoles 3:00 PM</p>
+        </div>
+        <div class="grupo">
+          <img src="images/calendario.png" alt="Calendario Grupo 02" />
+          <h3>Grupo 02</h3>
+          <p>Martes y Jueves 6:30 PM</p>
+        </div>
+        <div class="grupo">
+          <img src="images/calendario.png" alt="Calendario Grupo 03" />
+          <h3>Grupo 03</h3>
+          <p>Sábado 8:00 AM</p>
+        </div>
+        <div class="horario agregar">
+          <i class="fa-solid fa-plus fa-3x"></i>
+          <h3>Agregar horario</h3>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Smart Campus. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

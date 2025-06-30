@@ -19,7 +19,7 @@ body {
 header {
   display: flex;
   align-items: center;
-  background-color: #138505;
+  background-color: #145A32;
   color: white;
   padding: 1rem 2rem;
   gap: 1rem;
@@ -85,7 +85,7 @@ main::before {
 }
 
 .accion {
-  background-color: #15b909;
+  background-color: #145A32;
   color: white;
   height: 140px;
   border-radius: 12px;
@@ -125,7 +125,7 @@ main::before {
   position: absolute;
   top: 140px; /* Justo debajo del cuadro principal */
   width: 100%;
-  background-color: #17a50d;
+  background-color: #145A32;
   border-radius: 0 0 12px 12px;
   padding: 15px 0;
   box-shadow: 0 4px 8px rgba(11, 120, 40, 0.3);

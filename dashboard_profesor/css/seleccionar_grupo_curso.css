@@ -1,0 +1,166 @@
+
+  /* General */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #2c3e50;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* HEADER */
+  header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background-color: #0A3D62;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  header .logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  /* MAIN con fondo */
+  main {
+    flex-grow: 1;
+    position: relative;
+    background-image: url('images/grupo_curso.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.75);
+    z-index: 0;
+  }
+
+  .contenido {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .bienvenida h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .bienvenida p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Grid de grupos */
+  .grid-grupos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* Cada grupo con imagen */
+  .grupo {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  .grupo:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+
+  .grupo img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-bottom: 3px solid #0A3D62;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .grupo h3 {
+    margin: 1rem 0 0.5rem 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #0A3D62;
+    padding: 0 0.5rem;
+  }
+
+  .grupo p {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  /* Estilo para el botón Agregar horario */
+  .horario.agregar {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    min-height: 200px;
+  }
+
+  .horario.agregar:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+
+  .horario.agregar i {
+    color: #0A3D62;
+    margin-bottom: 0.5rem;
+  }
+
+  .horario.agregar h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0A3D62;
+  }
+
+  /* FOOTER */
+  footer {
+    background-color: #0A3D62;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    user-select: none;
+  }

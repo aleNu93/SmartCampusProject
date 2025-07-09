@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Campus - Asistencia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/asistencia_estudiante.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <img src="images/Smart_Campus_Logo.png" alt="Logo Smart Campus" class="logo">
+    <h1>Asistencia</h1>
+  </header>
+
+  <main>
+    <section class="bienvenida">
+      <h2>¡Bienvenid@ Estudiante!</h2>
+      <p>Consulta tu asistencia por curso en este periodo académico.</p>
+    </section>
+
+    <section class="contenedor-asistencia">
+      <!-- Curso 1 -->
+      <div class="curso-acordeon">
+        <div class="encabezado-acordeon">
+          <div class="info-curso">
+            <h3>Ingeniería de Requerimientos de Software</h3>
+            <p class="codigo-curso">Código: 16-0577</p>
+          </div>
+          <div class="asistencia-final">
+            <span class="porcentaje">80%</span>
+            <i class="fas fa-chevron-down icono-desplegar"></i>
+          </div>
+        </div>
+        
+        <div class="contenido-acordeon">
+          <div class="grafico-contenedor">
+            <canvas id="grafico1" width="150" height="150"></canvas>
+          </div>
+          <div class="detalle-asistencia">
+            <div class="item-asistencia">
+              <span class="nombre-item">Asistencias totales</span>
+              <span class="valor-item">12/15</span>
+            </div>
+            <div class="item-asistencia">
+              <span class="nombre-item">Tardías</span>
+              <span class="valor-item">2</span>
+            </div>
+            <div class="item-asistencia">
+              <span class="nombre-item">Ausencias</span>
+              <span class="valor-item">3</span>
+            </div>
+            <div class="fechas-contenedor">
+              <span class="fechas-titulo">Fechas de ausencias:</span>
+              <div class="fechas-lista">
+                <div class="fecha-item">22/05/2025</div>
+                <div class="fecha-item">05/06/2025</div>
+                <div class="fecha-item">19/06/2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Curso 2 -->
+      <div class="curso-acordeon">
+        <div class="encabezado-acordeon">
+          <div class="info-curso">
+            <h3>Redes</h3>
+            <p class="codigo-curso">Código: 16-0576</p>
+          </div>
+          <div class="asistencia-final">
+            <span class="porcentaje">93%</span>
+            <i class="fas fa-chevron-down icono-desplegar"></i>
+          </div>
+        </div>
+        
+        <div class="contenido-acordeon">
+          <div class="grafico-contenedor">
+            <canvas id="grafico2" width="150" height="150"></canvas>
+          </div>
+          <div class="detalle-asistencia">
+            <div class="item-asistencia">
+              <span class="nombre-item">Asistencias totales</span>
+              <span class="valor-item">14/15</span>
+            </div>
+            <div class="item-asistencia">
+              <span class="nombre-item">Tardías</span>
+              <span class="valor-item">0</span>
+            </div>
+            <div class="item-asistencia">
+              <span class="nombre-item">Ausencias</span>
+              <span class="valor-item">1</span>
+            </div>
+            <div class="fechas-contenedor">
+              <span class="fechas-titulo">Fechas de ausencias:</span>
+              <div class="fechas-lista">
+                <div class="fecha-item">12/05/2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Curso 3 -->
+      <div class="curso-acordeon">
+        <div class="encabezado-acordeon">
+          <div class="info-curso">
+            <h3>Bases de Datos</h3>
+            <p class="codigo-curso">Código: 16-0582</p>
+          </div>
+          <div class="asistencia-final">
+            <span class="porcentaje">67%</span>
+            <i class="fas fa-chevron-down icono-desplegar"></i>
+          </div>
+        </div>
+        
+        <div class="contenido-acordeon">
+          <div class="grafico-contenedor">
+            <canvas id="grafico3" width="150" height="150"></canvas>
+          </div>
+          <div class="detalle-asistencia">
+            <div class="item-asistencia">
+              <span class="nombre-item">Asistencias totales</span>
+              <span class="valor-item">10/15</span>
+            </div>
+            <div class="item-asistencia">
+              <span class="nombre-item">Tardías</span>
+              <span class="valor-item">1</span>
+            </div>
+            <div class="item-asistencia">
+              <span class="nombre-item">Ausencias</span>
+              <span class="valor-item">5</span>
+            </div>
+            <div class="fechas-contenedor">
+              <span class="fechas-titulo">Fechas de ausencias:</span>
+              <div class="fechas-lista">
+                <div class="fecha-item">19/05/2025</div>
+                <div class="fecha-item">02/06/2025</div>
+                <div class="fecha-item">16/06/2025</div>
+                <div class="fecha-item">30/06/2025</div>
+                <div class="fecha-item">14/07/2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Curso 4 -->
+      <div class="curso-acordeon">
+        <div class="encabezado-acordeon">
+          <div class="info-curso">
+            <h3>Argumentación y Retórica</h3>
+            <p class="codigo-curso">Código: 03-5001</p>
+          </div>
+          <div class="asistencia-final">
+            <span class="porcentaje">100%</span>
+            <i class="fas fa-chevron-down icono-desplegar"></i>
+          </div>
+        </div>
+        
+        <div class="contenido-acordeon">
+          <div class="grafico-contenedor">
+            <canvas id="grafico4" width="150" height="150"></canvas>
+          </div>
+          <div class="detalle-asistencia">
+            <div class="item-asistencia">
+              <span class="nombre-item">Asistencias totales</span>
+              <span class="valor-item">15/15</span>
+            </div>
+            <div class="item-asistencia">
+              <span class="nombre-item">Tardías</span>
+              <span class="valor-item">0</span>
+            </div>
+            <div class="item-asistencia">
+              <span class="nombre-item">Ausencias</span>
+              <span class="valor-item">0</span>
+            </div>
+            <div class="fechas-contenedor" style="display: none;">
+              <span class="fechas-titulo">Fechas de ausencias:</span>
+              <div class="fechas-lista"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Curso 5 -->
+      <div class="curso-acordeon">
+        <div class="encabezado-acordeon">
+          <div class="info-curso">
+            <h3>Expresiones del Espíritu Humano</h3>
+            <p class="codigo-curso">Código: 03-6002</p>
+          </div>
+          <div class="asistencia-final">
+            <span class="porcentaje">87%</span>
+            <i class="fas fa-chevron-down icono-desplegar"></i>
+          </div>
+        </div>
+        
+        <div class="contenido-acordeon">
+          <div class="grafico-contenedor">
+            <canvas id="grafico5" width="150" height="150"></canvas>
+          </div>
+          <div class="detalle-asistencia">
+            <div class="item-asistencia">
+              <span class="nombre-item">Asistencias totales</span>
+              <span class="valor-item">13/15</span>
+            </div>
+            <div class="item-asistencia">
+              <span class="nombre-item">Tardías</span>
+              <span class="valor-item">1</span>
+            </div>
+            <div class="item-asistencia">
+              <span class="nombre-item">Ausencias</span>
+              <span class="valor-item">2</span>
+            </div>
+            <div class="fechas-contenedor">
+              <span class="fechas-titulo">Fechas de ausencias:</span>
+              <div class="fechas-lista">
+                <div class="fecha-item">23/06/2025</div>
+                <div class="fecha-item">07/07/2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Smart Campus. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const acordeones = document.querySelectorAll('.curso-acordeon');
+      
+      acordeones.forEach(acordeon => {
+        const encabezado = acordeon.querySelector('.encabezado-acordeon');
+        const contenido = acordeon.querySelector('.contenido-acordeon');
+        const icono = acordeon.querySelector('.icono-desplegar');
+        
+        encabezado.addEventListener('click', () => {
+          // Cerrar otros acordeones
+          acordeones.forEach(item => {
+            if (item !== acordeon) {
+              item.querySelector('.contenido-acordeon').style.display = 'none';
+              item.querySelector('.icono-desplegar').classList.remove('rotado');
+            }
+          });
+          
+          // Alternar el acordeon actual
+          if (contenido.style.display === 'flex') {
+            contenido.style.display = 'none';
+            icono.classList.remove('rotado');
+          } else {
+            contenido.style.display = 'flex';
+            icono.classList.add('rotado');
+          }
+        });
+      });
+
+      // Configuración de gráficos
+      const configGrafico = (id, porcentaje, tardias, ausencias) => {
+        const ctx = document.getElementById(id).getContext('2d');
+        const totalSemanas = 15;
+        const asistencias = (porcentaje / 100) * totalSemanas;
+        
+        // Determinar color principal (rojo si tiene 3+ ausencias)
+        const colorPrincipal = ausencias >= 3 ? '#E74C3C' : 
+                              (porcentaje >= 70 ? '#1E8449' : '#F1C40F');
+        
+        return new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+            labels: ['Asistencias', 'Tardías', 'Ausencias'],
+            datasets: [{
+              data: [asistencias - tardias, tardias, ausencias],
+              backgroundColor: [
+                colorPrincipal,
+                '#F1C40F',  // Amarillo para tardías
+                '#AAAAAA'   // Gris para ausencias
+              ],
+              borderWidth: 0
+            }]
+          },
+          options: {
+            cutout: '50%',
+            plugins: {
+              legend: {
+                display: false
+              },
+              tooltip: {
+                enabled: false
+              }
+            }
+          }
+        });
+      };
+
+      // Crear gráficos con datos reales
+      // Parámetros: id, porcentaje, tardías, ausencias
+      configGrafico('grafico1', 80, 2, 3);  // 12 asistencias (10 normales + 2 tardías), 3 ausencias
+      configGrafico('grafico2', 93, 0, 1);  // 14 asistencias, 1 ausencia
+      configGrafico('grafico3', 67, 1, 5);  // 10 asistencias (9 normales + 1 tardía), 5 ausencias
+      configGrafico('grafico4', 100, 0, 0); // 15 asistencias, 0 ausencias
+      configGrafico('grafico5', 87, 1, 2);  // 13 asistencias (12 normales + 1 tardía), 2 ausencias
+    });
+  </script>
+</body>
+</html>

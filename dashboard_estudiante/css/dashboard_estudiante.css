@@ -24,26 +24,81 @@ header {
   padding: 1rem 2rem;
   gap: 1rem;
   height: 70px;
+  position: relative; 
 }
+
 /*Estilo del logo en el header*/
 header .logo {
   height: 50px;
   width: auto;
 }
-/*Estilo del título en el header*/
+
 header h1 {
   font-size: 1.5rem;
   font-weight: 600;
+  margin-right: auto;
+  text-align:left;
+  flex-grow: 1;
+  padding-left: 10px;
 }
+
+/* Contenedor para los elementos derechos */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+/* Botón de cierre de sesión - Nuevo */
+.btn-cerrar-sesion {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Estilo para el botón de menú hamburguesa */
+.menu-hamburguesa {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: 0;
+}
+
+.btn-cerrar-sesion:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+.btn-cerrar-sesion i {
+  font-size: 1rem;
+}
+
 /*MAIN*/
 main {
   flex: 1;
-  padding: 2rem;
+  padding: 2.5rem 2rem;
   background-image: url('../images/fondo_campuslife.png');
   background-size: cover;
   background-position: center;
   position: relative;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
 }
+
 /*Capa semitransparente*/
 main::before {
   content: "";
@@ -55,10 +110,11 @@ main::before {
   background-color: rgba(255, 255, 255, 0.7);
   z-index: 0;
 }
+
 /*BIENVENIDA*/
 .bienvenida {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   position: relative;
   z-index: 1;
 }
@@ -68,16 +124,24 @@ main::before {
   font-size: 1.8rem;
   margin-bottom: 1rem;
 }
+
 /*ACCIONES PRINCIPALES*/
 .acciones {
   display: flex;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
-  max-width: 900px;
+  max-width: 600px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .acciones {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
 }
 
 .accion, .accion-contenedor {
@@ -98,16 +162,19 @@ main::before {
   transition: all 0.3s ease;
   text-align: center;
 }
-/*Efecto hoover de opciones*/
+
+/*Efecto hover de opciones*/
 .accion:hover {
   background-color: #138505;
   transform: translateY(-5px);
 }
+
 /*Estilos para los íconos*/
 .accion i {
   margin-bottom: 0.8rem;
   font-size: 2rem;
 }
+
 /*Contenedor de subopciones*/
 .accion-contenedor {
   position: relative;
@@ -116,14 +183,12 @@ main::before {
   align-items: center;
 }
 
-.accion-contenedor.abierto {
-  margin-bottom: 90px; /* Espacio para las opciones al abrirse */
-}
+
 
 .subopciones-cursos {/*Ocultas por defecto*/
   display: none;
   position: absolute;
-  top: 140px; /* Justo debajo del cuadro principal */
+  top: 100%; /* Justo debajo del cuadro principal */
   width: 100%;
   background-color: #145A32;
   border-radius: 0 0 12px 12px;
@@ -138,6 +203,7 @@ main::before {
   text-decoration: none;
   display: block;
 }
+
 /*Opciones del curso*/
 .opcion-curso {
   color: white;
@@ -146,10 +212,12 @@ main::before {
   text-align: center;
   transition: background-color 0.2s;
 }
-/* Efecto hoover para las opciones de curso*/
+
+/* Efecto hover para las opciones de curso*/
 .opcion-curso:hover {
   background-color: rgba(76, 128, 42, 0.192);
 }
+
 /* FOOTER*/
 footer {
   background-color: #145A32;

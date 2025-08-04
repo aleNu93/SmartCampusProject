@@ -11,9 +11,27 @@
 </head>
 <body>
   <header>
-    <img src="images/Smart_Campus_Logo.png" alt="Logo Smart Campus" class="logo"> <!--LOGO-->
-    <h1>Cursos Activos</h1><!--Título de la página-->
-  </header>
+  <img src="images/Smart_Campus_Logo.png" alt="Logo Smart Campus" class="logo">
+  <h1>Cursos Activos</h1>
+  <div class="header-right">
+    <button class="btn-atras" onclick="window.location.href='dashboard_estudiante.html'">Atrás</button>
+    <button id="btnMenu" class="menu-hamburguesa">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Menú lateral que se despliega desde la derecha -->
+<nav id="menuLateral" class="menu-lateral">
+  <button id="cerrarMenu" class="cerrar-menu">×</button>
+  <ul>
+    <li><a href="dashboard_estudiante.html">Dashboard Principal</a></li>
+    <li><a href="cursos_activos.html">Cursos</a></li>
+    <li><a href="calificaciones_estudiante.html">Calificaciones</a></li>
+    <li><a href="asistencia_estudiante.html">Asistencia</a></li>
+    <li><a href="#" id="cerrarSesionMenu">Cerrar sesión</a></li>
+  </ul>
+</nav>
 
   <main>
     <!-- Bienvenida -->
@@ -35,6 +53,7 @@
             <p class="horario">Lunes 7:00-10:00</p> <!--Horario del curso-->
           </div>
         </div>
+      
 
         <!-- Curso 2 -->
         <div class="curso"> <!--Tarjeta individual de curso-->
@@ -45,6 +64,7 @@
             <p class="horario">Martes 14:00-17:00</p> <!--Horario del curso-->
           </div>
         </div>
+        
 
         <!-- Curso 3 -->
         <div class="curso"> <!--Tarjeta individual de curso-->
@@ -84,5 +104,22 @@
   <footer>
     <p>&copy; 2025 Smart Campus. Todos los derechos reservados.</p>
   </footer>
+
+  <script src="js/menu.js"></script>
+
+  <script>
+    // Guardar el curso seleccionado al hacer clic
+    document.querySelectorAll('.curso-link').forEach(link => {
+      link.addEventListener('click', function() {
+        e.preventDefault();
+    const cursoInfo = {
+        nombre: this.querySelector('h3').textContent,
+        codigo: this.querySelector('.codigo').textContent.replace('Código: ', ''),
+        horario: this.querySelector('.horario').textContent};
+        localStorage.setItem('cursoSeleccionado', cursoNombre);
+        window.location.href = this.getAttribute('href');
+      });
+    });
+  </script>
 </body>
 </html>

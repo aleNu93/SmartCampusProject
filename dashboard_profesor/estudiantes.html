@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estudiantes - Smart Campus</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/estudiantes.css" />
+</head>
+<body>
+  <header>
+    <button id="btnMenu" class="btn-menu"><i class="fas fa-bars"></i></button>
+    <img src="images/Smart_Campus_Logo.png" alt="Logo Smart Campus" class="logo" />
+    <h1 id="titulo-estudiantes">Estudiantes - Grupo</h1>
+  </header>
+  
+  <aside id="sidebar" class="sidebar">
+    <button id="btnCerrarMenu" class="cerrar-menu"><i class="fas fa-times"></i></button>
+    <ul id="menuList" class="menu-list"></ul>
+  </aside>
+
+  <main>
+    <table class="tabla-estudiantes">
+      <thead>
+        <tr>
+          <th>Foto</th>
+          <th>Nombre</th>
+          <th>Cédula</th>
+          <th>Correo</th>
+          <th>Nota</th>
+          <th>% Asistencia</th>
+        </tr>
+      </thead>
+      <tbody id="tbodyEstudiantes"></tbody>
+    </table>
+
+    <section class="form-grupos">
+      <h2>Formar Grupos</h2>
+      <div class="form-row">
+        <label>Tipo de grupo:
+          <select id="tipoGrupo">
+            <option value="permanente">Permanente</option>
+            <option value="temporal">Temporal</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="form-row" id="fechaExpiracionRow" style="display:none;">
+        <label>Fecha de expiración:
+          <input type="date" id="fechaExpiracion" />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>Método de formación:
+          <select id="metodoFormacion">
+            <option value="aleatorio">Aleatorio</option>
+            <option value="manual">Manual</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>Cantidad de grupos:
+          <input type="number" id="cantidadGrupos" min="1" value="2" />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>Cantidad estudiantes por grupo:
+          <input type="number" id="cantidadEstudiantes" min="1" value="3" />
+        </label>
+      </div>
+
+      <button id="btnFormarGrupos" class="btn-agregar">Formar grupos</button>
+      <div id="seleccionManualContainer" style="margin-top: 1rem;"></div>
+    </section>
+
+    <section id="resultadoGrupos" style="margin: 2rem auto; max-width: 900px; padding: 1rem;">
+      <!-- Aquí se mostrarán los grupos formados -->
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Smart Campus - Todos los derechos reservados
+  </footer>
+
+  <script src="js/estudiantes.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const curso = params.get('curso') || 'Curso desconocido';
+    const grupo = params.get('grupo') || 'Grupo desconocido';
+
+    const titulo = document.getElementById('titulo-estudiantes');
+    if (titulo) {
+      titulo.textContent = `Estudiantes - ${grupo} - ${curso}`;
+    }
+  </script>
+</body>
+</html>

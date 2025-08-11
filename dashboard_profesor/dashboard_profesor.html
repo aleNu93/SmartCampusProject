@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Campus - Profesor</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/dashboard_profesor.css" />
+</head>
+<body>
+<header>
+  <button id="btnMenu" class="btn-menu" aria-label="Abrir menú">
+    <i class="fas fa-bars"></i>
+  </button>
+  <img src="images/Smart_Campus_Logo.png" alt="Logo Smart Campus" class="logo" />
+  <h1>Panel del Profesor</h1>
+</header>
+
+<nav id="sidebar" class="sidebar" aria-label="Menú lateral">
+  <button id="btnCerrarMenu" class="btn-cerrar-menu" aria-label="Cerrar menú">
+    <i class="fas fa-times"></i>
+  </button>
+  <ul id="menuList" class="menu-list">
+    <!-- Links con JS -->
+  </ul>
+</nav>
+
+  <main>
+    <section class="bienvenida">
+      <h2 id="saludo-profesor">¡Bienvenido!</h2>
+      <p class="rol-usuario text-capitalize"></p>
+      <p class="nombre-usuario"></p>
+      <p class="correo-usuario"></p>
+    </section>
+
+    <section class="grid-cursos">
+      <h2>Cursos</h2>
+      <div class="cursos-container">
+
+        <div class="curso">
+          <img src="images/fundamentos_tecnologias.jpg" alt="Fundamentos de TI" />
+          <h3>Fundamentos de Tecnologías de la Información</h3>
+        </div>
+
+        <div class="curso">
+          <img src="images/fundamentos_programacion.jpg" alt="Fundamentos de Programación" />
+          <h3>Fundamentos de Programación</h3>
+        </div>
+
+        <div class="curso">
+          <img src="images/programacion_paralela.jpg" alt="Programación Paralela y Distribuida" />
+          <h3>Programación Paralela y Distribuida</h3>
+        </div>
+
+        <div class="curso">
+          <img src="images/estructuras_datos.jpg" alt="Estructura de Datos y Algoritmos" />
+          <h3>Estructura de Datos y Algoritmos</h3>
+        </div>
+
+        <div class="curso">
+          <img src="images/bases_datos.jpg" alt="Bases de Datos" />
+          <h3>Bases de Datos</h3>
+        </div>
+
+        <div class="curso">
+          <img src="images/ingenieria_requisitos.jpg" alt="Ingeniería de Requerimientos de Software" />
+          <h3>Ingeniería de Requerimientos de Software</h3>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Smart Campus. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/dashboard_profesor.js"></script>
+</body>
+</html>

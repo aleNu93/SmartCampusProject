@@ -1,0 +1,242 @@
+/* dashboard_estudiante.css */
+
+/* GENERAL*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  background-color: #145A32;
+  color: white;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  height: 70px;
+  position: relative; 
+}
+
+/*Estilo del logo en el header*/
+header .logo {
+  height: 50px;
+  width: auto;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-right: auto;
+  text-align:left;
+  flex-grow: 1;
+  padding-left: 10px;
+}
+
+/* Contenedor para los elementos derechos */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+/* Botón de cierre de sesión - Nuevo */
+.btn-cerrar-sesion {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Estilo para el botón de menú hamburguesa */
+.menu-hamburguesa {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: 0;
+}
+
+.btn-cerrar-sesion:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+.btn-cerrar-sesion i {
+  font-size: 1rem;
+}
+
+/*MAIN*/
+main {
+  flex: 1;
+  padding: 2.5rem 2rem;
+  background-image: url('../images/fondo_campuslife.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+}
+
+/*Capa semitransparente*/
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 0;
+}
+
+/*BIENVENIDA*/
+.bienvenida {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.bienvenida h2 {
+  color: #1C2833;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/*ACCIONES PRINCIPALES*/
+.acciones {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .acciones {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+.accion, .accion-contenedor {
+  width: 140px;
+}
+
+.accion {
+  background-color: #145A32;
+  color: white;
+  height: 140px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(11, 120, 40, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/*Efecto hover de opciones*/
+.accion:hover {
+  background-color: #138505;
+  transform: translateY(-5px);
+}
+
+/*Estilos para los íconos*/
+.accion i {
+  margin-bottom: 0.8rem;
+  font-size: 2rem;
+}
+
+/*Contenedor de subopciones*/
+.accion-contenedor {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subopciones-cursos {/*Ocultas por defecto*/
+  display: none;
+  position: absolute;
+  top: 100%; /* Justo debajo del cuadro principal */
+  width: 100%;
+  background-color: #145A32;
+  border-radius: 0 0 12px 12px;
+  padding: 15px 0;
+  box-shadow: 0 4px 8px rgba(11, 120, 40, 0.3);
+  z-index: 2;
+}
+
+/*Enlaces en subopciones*/
+.subopciones-cursos a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+/*Opciones del curso*/
+.opcion-curso {
+  color: white;
+  padding: 10px 0;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+/* Efecto hover para las opciones de curso*/
+.opcion-curso:hover {
+  background-color: rgba(76, 128, 42, 0.192);
+}
+
+/* === Patch: 4 botones en una fila en desktop === */
+@media (min-width: 768px) {
+  .acciones {
+    max-width: none;     /* quita el tope de 600px */
+    flex-wrap: nowrap;   /* no permite salto de línea */
+    justify-content: center;
+  }
+  /* opcional: ayuda a que el título largo se vea bien dentro del ancho */
+  .accion h3 {
+    word-break: break-word;
+    line-height: 1.15;
+    padding: 0 .25rem;
+  }
+}
+/* === Fin del patch === */
+
+/* FOOTER*/
+footer {
+  background-color: #145A32;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+}

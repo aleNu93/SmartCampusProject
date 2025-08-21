@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Estudiante - Smart Campus</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body class="vh-100" style="background-image: url('images/campus.jpg'); background-size: cover; background-position: center;">
+  <button id="btnInicio" class="btn btn-secondary" onclick="window.location.href='index.html'">Inicio</button>
+  <div class="fondo-blanco"></div>
+  <div class="contenido-principal d-flex align-items-center justify-content-center gap-4 h-100">
+    <img src="images/logo-smart-campus.png" alt="Smart Campus Logo" class="logo-login">
+    <div class="login-container text-center bg-light p-5 rounded shadow-lg border border-3 border-primary">
+      <h2 class="text-success mb-4 fw-bold">Ingreso para Estudiante</h2>
+      <form id="loginEstudianteForm">
+        <div class="mb-3 text-start">
+          <label for="user-est" class="form-label">Usuario *</label>
+          <input type="text" id="user-est" class="form-control" placeholder="Ingrese su usuario">
+        </div>
+        <div class="mb-4 text-start">
+          <label for="pass-est" class="form-label">Contraseña *</label>
+          <input type="password" id="pass-est" class="form-control" placeholder="Ingrese su contraseña">
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+         <button type="button" id="btnRecuperarPro" class="btn btn-link mt-2">¿Olvidaste tu contraseña?</button>
+      </form>
+    </div>
+  </div>
+  <script src="js/login.js"></script>
+</body>
+</html>

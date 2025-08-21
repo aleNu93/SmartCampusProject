@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Campus - Bitácora de Calificaciones</title>
+  <!-- Iconos como en el dashboard -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/bitacora_calificaciones.css"/>
+</head>
+<body>
+  <!-- ===== Header verde con título centrado ===== -->
+  <header class="topbar">
+    <div class="brand">
+      <img src="images/Smart_Campus_Logo.png" alt="Smart Campus" class="logo"/>
+    </div>
+    <h1 class="titulo">Bitácora de calificaciones de <span id="nombreUsuario">Estudiante</span></h1>
+    <div class="actions">
+      <!-- Menú hamburguesa con el mismo ícono del dashboard -->
+      <button id="btnMenu" class="hamburger menu-hamburguesa" aria-label="Abrir menú">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Menú lateral derecho (texto puro) ===== -->
+  <aside id="sideMenu" class="side-menu" aria-hidden="true">
+    <div class="menu-head">
+      <span>Menú</span>
+      <button id="btnMenuClose" class="menu-close" aria-label="Cerrar">×</button>
+    </div>
+    <nav class="menu-links">
+      <a href="dashboard_estudiante.html">Dashboard principal</a>
+      <a href="cursos_activos.html">Cursos</a>
+      <a href="calificaciones_estudiante.html">Calificaciones</a>
+      <a href="asistencia_estudiante.html">Asistencia</a>
+      <a class="active" href="bitacora_calificaciones.html">Bitácora de calificaciones</a>
+    </nav>
+  </aside>
+  <div id="backdrop" class="backdrop" aria-hidden="true"></div>
+
+  <!-- ===== Contenido ===== -->
+  <main class="wrap">
+    <section class="bienvenida">
+      <h2>Bitácora de Calificaciones</h2>
+      <p class="muted">Solo lectura — los registros no pueden ser alterados</p>
+    </section>
+
+    <!-- Acordeón por período (se mantiene) -->
+    <section id="accordionPeriodos" class="accordion"></section>
+
+    <!-- Eliminado: filtros + tabla -->
+    <!-- <section class="filters">…</section> -->
+    <!-- <section id="tabla" class="table-card">…</section> -->
+  </main>
+
+  <footer class="bottombar">© 2025 Smart Campus. Todos los derechos reservados.</footer>
+
+  <script src="js/bitacora_calificaciones.js"></script>
+</body>
+</html>

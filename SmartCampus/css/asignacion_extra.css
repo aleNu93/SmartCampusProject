@@ -1,0 +1,151 @@
+/* ====== Estilos extra para Asignación (tabla + botones + modal + badge) ====== */
+:root{
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --border:#e2e8f0;
+  --primary:#0ea5e9;     /* celeste */
+  --accent:#10b981;      /* verde */
+  --danger:#ef4444;      /* rojo puntito */
+  --shadow:0 8px 30px rgba(2,8,23,.08);
+}
+
+html,body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+}
+
+/* Header / títulos */
+header .logo{ height:48px; }
+#titulo-asignacion{ font-size:1.6rem; font-weight:800; letter-spacing:.2px; }
+#subtitulo-asignacion{ color:var(--muted); font-weight:600; margin-top:.25rem; }
+
+/* Contenedor principal como tarjeta */
+main .entregas-asignacion{
+  max-width:980px; margin:32px auto; background:var(--card);
+  border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow);
+  padding:24px 22px;
+}
+.titulo-seccion{ font-size:1.25rem; font-weight:800; margin-bottom:6px; }
+.descripcion-seccion{ color:var(--muted); margin-bottom:14px; }
+
+/* ===== Tabla de entregas ===== */
+.tabla-entregas{ width:100%; }
+.tabla-entregas table{
+  width:100%; border-collapse:separate; border-spacing:0 10px; /* filas separadas */
+}
+.tabla-entregas thead th{
+  text-align:left; font-weight:700; color:var(--text);
+  border-bottom:2px solid var(--border); padding:10px 12px;
+}
+
+/* Tamaños de columnas (ajusta si ocupás) */
+.tabla-entregas tbody td:nth-child(1){ width:52%; }
+.tabla-entregas tbody td:nth-child(2){ width:20%; }
+.tabla-entregas tbody td:nth-child(3){ width:14%; }
+.tabla-entregas tbody td:nth-child(4){ width:14%; }
+
+/* Celdas */
+.fila-entrega td{
+  background:#fff; border:1px solid var(--border);
+  padding:12px 14px; vertical-align:top;
+}
+
+/* === Anti-salto en hover (no mover filas) === */
+.fila-entrega,
+.fila-entrega:hover{
+  transform:none !important;
+  translate:0 !important;
+  margin-top:0 !important;
+  margin-bottom:0 !important;
+}
+.fila-entrega td{ /* bordes constantes */
+  border-width:1px !important;
+  border-style:solid !important;
+  border-color:var(--border) !important;
+}
+.fila-entrega:hover td{
+  border-color:var(--border) !important;
+}
+/* Sólo sombra suave en hover (no afecta layout) */
+.fila-entrega{ transition:box-shadow .12s ease; box-shadow:none; }
+.fila-entrega:hover{ box-shadow:0 8px 18px rgba(2,8,23,.06); }
+
+/* Contenido de la entrega */
+.entrega-autor{ font-weight:700; margin-bottom:6px; display:flex; align-items:center; gap:6px; }
+.entrega-contenido p{ margin:4px 0 6px; line-height:1.35; }
+.link-archivo{ text-decoration:none; font-weight:600; color:#1d4ed8; }
+.link-archivo:hover{ text-decoration:underline; }
+
+/* Nota (input + botón) */
+.nota-wrap{ display:flex; gap:8px; align-items:center; }
+.nota-wrap input, .nota-input{
+  width:90px; padding:7px 10px; border:1px solid var(--border); border-radius:10px;
+  outline:none;
+}
+.nota-wrap input:focus{ border-color:var(--primary); box-shadow:0 0 0 3px rgba(14,165,233,.15); }
+.btn-guardar-nota{
+  padding:7px 12px; border:none; border-radius:10px; background:var(--primary); color:#fff; font-weight:700; cursor:pointer;
+}
+.btn-guardar-nota:hover{ filter:brightness(.96); }
+
+/* Acciones (descargar + carta) */
+.acciones-entrega{ display:flex; gap:10px; align-items:center; }
+.btn-link{ text-decoration:none; font-weight:700; color:#1d4ed8; }
+.btn-link:hover{ text-decoration:underline; }
+
+/* Ícono de carta con badge (mismo patrón que calificaciones_estudiante) */
+.contenedor-reclamo{ position:relative; cursor:pointer; display:inline-block; }
+.icono-reclamo{ color:#3498db; font-size:1.15rem; transition:color .2s; }
+.icono-reclamo:hover{ color:#2980b9; }
+.notificacion-reclamo{
+  position:absolute; top:-5px; right:-5px; color:var(--danger); font-size:.6rem;
+}
+.notificacion-reclamo.oculto{ display:none; }
+
+/* ===== Modal de reclamos ===== */
+.modal{ position:fixed; inset:0; display:none; z-index:100; }
+.modal.open{ display:block; } /* por si en algún punto usás la clase */
+#modal-reclamo{ background:rgba(15,23,42,.45); } /* fondo semitransparente */
+
+.contenido-modal{
+  position:relative; z-index:101; width:min(760px,96vw);
+  margin:7vh auto; background:#fff; border-radius:16px; box-shadow:0 20px 60px rgba(0,0,0,.2);
+  display:flex; flex-direction:column; max-height:86vh; overflow:hidden;
+  padding:16px;
+}
+.cerrar-modal{
+  position:absolute; top:10px; right:14px; background:transparent; border:none;
+  font-size:24px; line-height:1; cursor:pointer;
+}
+
+/* Chat */
+#chat-thread{ padding:8px; background:#f8fafc; border:1px solid var(--border); border-radius:10px; }
+.chat-msg{ display:flex; margin:8px 0; }
+.bubble{
+  max-width:80%; padding:10px 12px; border-radius:14px;
+  box-shadow:0 1px 2px rgba(0,0,0,.06);
+}
+.bubble-student{ background:#e2e8f0; margin-right:auto; }
+.bubble-prof{ background:#dbeafe; margin-left:auto; }
+.msg-meta{ font-size:12px; opacity:.7; margin-top:4px; }
+
+.campo-mensaje{
+  width:100%; margin-top:10px; padding:10px 12px; border-radius:10px; border:1px solid var(--border); outline:none;
+  resize:vertical;
+}
+.campo-mensaje:focus{ border-color:var(--primary); box-shadow:0 0 0 3px rgba(14,165,233,.15); }
+.boton-enviar{
+  align-self:flex-end; margin-top:10px; padding:10px 14px; background:var(--primary); color:#fff;
+  border:none; border-radius:10px; cursor:pointer; font-weight:700;
+}
+.boton-enviar:hover{ filter:brightness(.96); }
+
+/* ===== Responsive ===== */
+@media (max-width:720px){
+  .tabla-entregas tbody td:nth-child(1){ width:auto; }
+  .tabla-entregas tbody td:nth-child(n+2){ width:auto; }
+  .nota-wrap{ flex-wrap:wrap; }
+}

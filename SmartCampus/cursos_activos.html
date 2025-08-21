@@ -1,0 +1,129 @@
+<!--cursos_activos.html-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Campus - Cursos Activos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/cursos_activos.css" />
+</head>
+<body>
+  <header>
+  <img src="images/Smart_Campus_Logo.png" alt="Logo Smart Campus" class="logo">
+  <h1>Cursos Activos</h1>
+  <div class="header-right">
+    <button class="btn-atras" onclick="window.location.href='dashboard_estudiante.html'">Atrás</button>
+    <button id="btnMenu" class="menu-hamburguesa">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Menú lateral que se despliega desde la derecha -->
+<nav id="menuLateral" class="menu-lateral">
+  <button id="cerrarMenu" class="cerrar-menu">×</button>
+  <ul>
+    <li><a href="dashboard_estudiante.html">Dashboard Principal</a></li>
+    <li><a href="cursos_activos.html">Cursos</a></li>
+    <li><a href="calificaciones_estudiante.html">Calificaciones</a></li>
+    <li><a href="asistencia_estudiante.html">Asistencia</a></li>
+    <li><a href="#" id="cerrarSesionMenu">Cerrar sesión</a></li>
+  </ul>
+</nav>
+
+  <main>
+    <!-- Bienvenida -->
+    <section class="bienvenida">
+      <h2>¡Bienvenid@ Estudiante!</h2>
+      <p>Estos son tus cursos activos en este periodo académico.</p>
+    </section>
+
+    <section class="grid-cursos"> <!--grid de cursos-->
+      <h2>Tus Cursos</h2>
+      <div class="cursos-container"><!--Contenedor de tarjetas de cursos-->
+
+        <!-- Curso 1 -->
+        <div class="curso"> <!--Tarjeta individual de curso-->
+          <img src="images/ingenieria_requisitos.jpg" alt="Ingeniería de Requerimientos"> <!--imagen del curso-->
+          <div class="curso-info">
+            <h3>Ingeniería de Requerimientos de Software</h3> <!--Título del curso-->
+            <p class="codigo">Código: 16-0577</p> <!--Código del curso-->
+            <p class="horario">Lunes 7:00-10:00</p> <!--Horario del curso-->
+          </div>
+        </div>
+      
+
+        <!-- Curso 2 -->
+        <div class="curso"> <!--Tarjeta individual de curso-->
+          <img src="images/redes.jpg" alt="Redes"> <!--imagen del curso-->
+          <div class="curso-info">
+            <h3>Redes</h3> <!--Título del curso-->
+            <p class="codigo">Código: 16-0576</p><!--Código del curso-->
+            <p class="horario">Martes 14:00-17:00</p> <!--Horario del curso-->
+          </div>
+        </div>
+        
+
+        <!-- Curso 3 -->
+        <div class="curso"> <!--Tarjeta individual de curso-->
+          <img src="images/bases_datos.jpg" alt="Bases de Datos"> <!--imagen del curso-->
+          <div class="curso-info">
+            <h3>Bases de Datos</h3><!--Título del curso-->
+            <p class="codigo">Código: 16-0582</p> <!--Código del curso-->
+            <p class="horario">Miércoles 10:00-13:00</p> <!--Horario del curso-->
+          </div>
+        </div>
+
+        <!-- Curso 4 -->
+        <div class="curso"> <!--Tarjeta individual de curso-->
+          <img src="images/argumentacion.jpg" alt="Argumentación"> <!--imagen del curso-->
+          <div class="curso-info">
+            <h3>Argumentación y Retórica</h3><!--Título del curso-->
+            <p class="codigo">Código: 03-5001</p> <!--Código del curso-->
+            <p class="horario">Jueves 8:00-11:00</p><!--Horario del curso-->
+          </div>
+        </div>
+
+        <!-- Curso 5 -->
+        <div class="curso"> <!--Tarjeta individual de curso-->
+          <img src="images/espiritu_humano.jpg" alt="Expresiones del Espíritu Humano"> <!--imagen del curso-->
+          <div class="curso-info">
+            <h3>Expresiones del espíritu Humano</h3> <!--Título del curso-->
+            <p class="codigo">Código: 03-6002</p> <!--Código del curso-->
+            <p class="horario">Viernes 16:00-19:00</p> <!--Horario del curso-->
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!--FOOTER-->
+  <footer>
+    <p>&copy; 2025 Smart Campus. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/menu.js"></script>
+
+  <script>
+  // Detectar clic en cada tarjeta de curso
+  document.querySelectorAll('.curso').forEach(curso => {
+    curso.addEventListener('click', function () {
+      const cursoInfo = {
+        nombre: this.querySelector('h3').textContent,
+        codigo: this.querySelector('.codigo').textContent.replace('Código: ', ''),
+        horario: this.querySelector('.horario').textContent
+      };
+
+      // Guardamos info en localStorage
+      localStorage.setItem('cursoSeleccionado', JSON.stringify(cursoInfo));
+
+      // Redirigimos al HTML de contenido con el nombre en querystring
+      window.location.href = `contenido_est.html?curso=${encodeURIComponent(cursoInfo.nombre)}`;
+    });
+  });
+  </script>
+</body>
+</html>

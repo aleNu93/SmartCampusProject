@@ -1,0 +1,155 @@
+:root{
+  --green:#105e3c;
+  --green-2:#0a4a2f;
+  --bg:#f6f8fb;
+  --card:#fff;
+  --text:#0f172a;
+  --muted:#475569;
+  --border:#e2e8f0;
+  --shadow:0 8px 30px rgba(2,8,23,.08);
+
+  --ok-bg:#dcfce7; --ok-bd:#bbf7d0; --ok-t:#166534;
+  --bad-bg:#fee2e2; --bad-bd:#fecaca; --bad-t:#991b1b;
+}
+
+/* Reset y tipografía del sistema (como el resto) */
+*{box-sizing:border-box}
+html,body{margin:0; background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+
+/* ===== Header ===== */
+.topbar{
+  background:var(--green);
+  color:#fff;
+  padding:10px 14px;
+  display:grid;
+  grid-template-columns: 1fr auto 1fr; /* izq | titulo | der */
+  align-items:center;
+  gap:12px;
+}
+.topbar .logo{height:42px; width:auto}
+.titulo{margin:0; font-size:1.04rem; font-weight:800; text-align:center}
+.actions{display:flex; justify-content:flex-end}
+.hamburger{
+  font: inherit;
+  font-size:22px;
+  line-height:1;
+  border:1px solid rgba(255,255,255,.25);
+  background:transparent; color:#fff;
+  padding:8px 12px; border-radius:10px; cursor:pointer;
+}
+.hamburger:hover{background:rgba(255,255,255,.1)}
+
+/* ===== Menú lateral derecho (texto puro) ===== */
+.side-menu{
+  position:fixed; top:0; right:0; bottom:0;
+  width:300px; max-width:86vw;
+  background:var(--green); color:#fff;
+  transform:translateX(110%); transition:transform .2s ease;
+  z-index:1000; box-shadow:-8px 0 30px rgba(0,0,0,.22);
+  display:flex; flex-direction:column;
+}
+.side-menu.active{ transform:translateX(0); }
+.menu-head{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px; border-bottom:1px solid rgba(255,255,255,.2);
+}
+.menu-close{
+  font: inherit; font-size:22px; line-height:1;
+  border:1px solid rgba(255,255,255,.25);
+  background:transparent; color:#fff;
+  width:36px; height:36px; border-radius:8px; cursor:pointer;
+}
+.menu-close:hover{background:rgba(255,255,255,.12)}
+.menu-links{display:flex; flex-direction:column; padding:8px}
+.menu-links a{
+  color:#fff; text-decoration:none; padding:10px 12px; border-radius:10px;
+}
+.menu-links a:hover{background:rgba(255,255,255,.12)}
+.menu-links a.active{background:rgba(255,255,255,.18); font-weight:800}
+
+/* Backdrop que solo capta clics cuando está activo */
+.backdrop{
+  position:fixed; inset:0; background:rgba(0,0,0,.35);
+  opacity:0; pointer-events:none; transition:opacity .2s ease; z-index:900;
+}
+.backdrop.active{ opacity:1; pointer-events:auto; }
+
+/* ===== Contenido ===== */
+.wrap{max-width:980px; margin:18px auto 32px; padding:0 16px; position:relative; z-index:1}
+.bienvenida h2{margin:.2rem 0 .4rem; font-size:1.6rem; font-weight:800}
+.muted{color:var(--muted); margin:0 0 .6rem}
+
+/* ===== Acordeón por período ===== */
+.accordion{display:flex; flex-direction:column; gap:12px;}
+.periodo{
+  background:var(--card); border:1px solid var(--border); border-radius:14px; box-shadow:var(--shadow);
+}
+.periodo-head{
+  width:100%; border:0; background: linear-gradient(0deg, rgba(16,94,60,.08), rgba(16,94,60,.08)), #fff;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 14px; font-weight:800; cursor:pointer; text-align:left; color:var(--text);
+}
+.badge-periodo{ background:#0b6a43; color:#fff; border-radius:999px; padding:.22rem .55rem; font-size:.82rem; font-weight:800; }
+.periodo .meta{color:var(--muted); font-weight:600}
+.periodo .caret{transition:transform .15s ease; color:#0b6a43; font-weight:700}
+.periodo.open .caret{transform:rotate(180deg)}
+
+.periodo-content{ border-top:1px solid var(--border); padding:12px; display:none; }
+.periodo.open .periodo-content{ display:block; }
+
+.grid-materias{
+  display:grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap:10px;
+}
+.materia{
+  background:#fff; border:1px solid var(--border); border-radius:12px; padding:10px 12px;
+  display:flex; flex-direction:column; gap:8px;
+}
+.materia.quemada{ border-color:#fca5a5; background:#fff7f7; }
+.m-title{ font-weight:800; line-height:1.2; }
+.m-meta{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.m-porc{ font-weight:800; }
+
+.badge{ display:inline-block; padding:.15rem .45rem; border-radius:.5rem; font-size:.78rem; font-weight:700; }
+.badge-ok{ background:var(--ok-bg); color:var(--ok-t); border:1px solid var(--ok-bd); }
+.badge-bad{ background:var(--bad-bg); color:var(--bad-t); border:1px solid var(--bad-bd); }
+.link{ font-weight:700; color:#1d4ed8; text-decoration:none; }
+.link:hover{ text-decoration:underline; }
+
+/* ===== Filtros + tabla ===== */
+.filters{display:flex;gap:10px;align-items:center;margin:8px 0 10px}
+#fPeriodo{padding:8px 10px;border:1px solid var(--border);border-radius:10px;background:#fff}
+.btn{padding:8px 12px;border-radius:10px;border:1px solid var(--border);cursor:pointer;background:#fff}
+.btn:hover{background:#f1f5f9}
+
+.table-card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:10px}
+.tabla{width:100%;border-collapse:separate;border-spacing:0 8px}
+.tabla thead th{padding:10px 12px;text-align:left;border-bottom:2px solid var(--border)}
+.tabla tbody td{background:#fff;border:1px solid var(--border);padding:10px 12px;vertical-align:top}
+.tabla tbody tr:hover{box-shadow:0 8px 18px rgba(2,8,23,.06)}
+.empty{padding:14px;color:var(--muted);text-align:center}
+.hidden{display:none}
+
+/* ===== Footer ===== */
+.bottombar{ background:var(--green-2); color:#cce5db; text-align:center; padding:12px 6px; }
+
+/* === Botón de menú igual al dashboard === */
+.menu-hamburguesa{
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:1.5rem;   /* tamaño del ícono */
+  cursor:pointer;
+  padding:0.5rem;
+  margin-left:0;
+}
+.menu-hamburguesa:hover{ opacity:.9; }
+
+/* === Sticky footer (solo cambio de footer) === */
+html, body { height: 100%; }
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main.wrap { flex: 1 0 auto; }
+.bottombar { margin-top: auto; }

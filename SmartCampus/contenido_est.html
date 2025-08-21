@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contenido del Curso - Estudiante</title>
+  <!-- Iconos como en el dashboard -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/contenido_est.css" />
+</head>
+<body>
+
+  <div class="header-bar">
+    <div class="header-content">
+      <img src="images/logo-campus.png" alt="Smart Campus" class="logo">
+      <h1 class="header-title">Contenido del Curso - Grupo 01</h1>
+
+      <!-- Botón de menú al lado derecho (igual al dashboard) -->
+      <div class="header-right">
+        <button id="btnMenu" class="menu-hamburguesa" aria-label="Abrir menú">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menú lateral y backdrop -->
+  <aside id="sideMenu" class="side-menu" aria-hidden="true">
+    <div class="menu-head">
+      <span>Menú</span>
+      <button id="btnMenuClose" class="menu-close" aria-label="Cerrar">×</button>
+    </div>
+    <nav class="menu-links">
+      <a href="dashboard_estudiante.html">Dashboard principal</a>
+      <a href="cursos_activos.html">Cursos</a>
+      <a href="calificaciones_estudiante.html">Calificaciones</a>
+      <a href="asistencia_estudiante.html">Asistencia</a>
+      <a href="bitacora_calificaciones.html">Bitácora de calificaciones</a>
+    </nav>
+  </aside>
+  <div id="backdrop" class="backdrop" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="contenido-container" id="contenidoContainerEstudiante">
+      <!-- Aquí se genera todo dinámicamente con JS -->
+    </div>
+  </div>
+
+  <script src="js/contenido_est.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Entregas de la Asignación</title>
+
+  <!-- Iconos para el botón del menú -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/asignacion_extra.css" />
+
+  <!-- Mantiene tu CSS actual (ya incluye estilos del menú) -->
+  <link rel="stylesheet" href="css/Asignaciones_cal.css" />
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="Logo" class="logo" />
+    <h1 id="titulo-asignacion">Asignación</h1>
+
+    <!-- Botón menú hamburguesa (nuevo) -->
+    <button id="btnMenu" class="btn-menu" aria-label="Abrir menú">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+  </header>
+
+  <main>
+    <section class="entregas-asignacion">
+      <h2 class="titulo-seccion" id="subtitulo-asignacion">–</h2>
+      <p class="descripcion-seccion">
+        Listado de entregas para esta asignación.
+      </p>
+
+      <div class="tabla-entregas">
+        <table>
+          <thead>
+            <tr>
+              <th>Estudiante</th>
+              <th>Fecha de Entrega</th>
+              <th>Nota</th>
+              <th>Reclamos</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-entregas">
+            <!-- Se inyecta todo con JS (tu asignacion.js) -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Smart Campus. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Sidebar del menú (nuevo) -->
+  <nav id="sidebar" class="sidebar" aria-label="Menú lateral" aria-hidden="true">
+    <button id="btnCerrarMenu" class="btn-cerrar-menu" aria-label="Cerrar menú">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+    <ul id="menuList" class="menu-list"><!-- items se insertan por JS --></ul>
+  </nav>
+
+  <div class="menu-backdrop" aria-hidden="true"></div>
+
+  <script src="js/asignacion.js" defer></script>
+
+  <script src="js/asignacion_menu.js" defer></script>
+</body>
+</html>

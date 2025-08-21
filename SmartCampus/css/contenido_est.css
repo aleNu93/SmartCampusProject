@@ -1,0 +1,224 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f9f0;
+  color: #1f3b1f;
+  margin: 0;
+  padding: 0;
+}
+
+.header-bar {
+  background-color: #0f6516;
+  padding: 10px 20px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 15px;
+}
+
+.header-title {
+  font-size: 1.5em;
+  color: white;
+  margin: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 100, 0, 0.2);
+}
+
+h1 {
+  color: #2e7d32;
+}
+
+.accordion-item {
+  margin-bottom: 15px;
+  border: 1px solid #a5d6a7;
+  border-radius: 5px;
+}
+
+.accordion-toggle {
+  width: 100%;
+  background-color: #236f0e;
+  color: white;
+  padding: 10px 15px;
+  text-align: left;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.accordion-content {
+  display: none;
+  padding: 15px;
+  background-color: #e8f5e9;
+  border-top: 1px solid #a5d6a7;
+  border-radius: 0 0 5px 5px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #a5d6a7;
+  resize: vertical;
+}
+
+button.publicar-btn,
+button.comentar,
+button.reaccionar,
+button.enviar {
+  background-color: #388e3c;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.publicacion {
+  margin-top: 10px;
+  background-color: #ffffff;
+  padding: 10px;
+  border-left: 5px solid #66bb6a;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.fecha {
+  font-size: 0.9em;
+  color: #388e3c;
+}
+
+input[type="file"] {
+  margin-top: 10px;
+}
+
+/* Card de entregable */
+.entregable-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Encabezado con título y puntos */
+.entregable-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.entregable-header h3 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #333;
+}
+
+.entregable-header .puntos {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Meta info: fechas */
+.entregable-body p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.entregable-body p span {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Botón de enviar */
+.entregable-responder {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.file-drop-zone {
+  border: 2px dashed #aaa;
+  border-radius: 4px;
+  padding: 1rem;
+  text-align: center;
+  color: #666;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+.file-drop-zone.dragover {
+  border-color: #007bff;
+  background-color: #e9f5ff;
+}
+
+.header-right{
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.menu-hamburguesa{
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.menu-hamburguesa:hover{ opacity: 0.9; }
+
+/* === Menú lateral y backdrop === */
+.side-menu{
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: 300px; max-width: 86vw;
+  background: #0f6516; color: #fff;
+  transform: translateX(110%); transition: transform .2s ease;
+  z-index: 1000; box-shadow: -8px 0 30px rgba(0,0,0,.22);
+  display: flex; flex-direction: column;
+}
+.side-menu.active{ transform: translateX(0); }
+.menu-head{
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px; border-bottom: 1px solid rgba(255,255,255,.2);
+}
+.menu-close{
+  font: inherit; font-size: 22px; line-height: 1;
+  border: 1px solid rgba(255,255,255,.25);
+  background: transparent; color: #fff;
+  width: 36px; height: 36px; border-radius: 8px; cursor: pointer;
+}
+.menu-close:hover{ background: rgba(255,255,255,.12); }
+.menu-links{ display: flex; flex-direction: column; padding: 8px; }
+.menu-links a{
+  color: #fff; text-decoration: none; padding: 10px 12px; border-radius: 10px;
+}
+.menu-links a:hover{ background: rgba(255,255,255,.12); }
+.menu-links a.active{ background: rgba(255,255,255,.18); font-weight: 800; }
+
+.backdrop{
+  position: fixed; inset: 0; background: rgba(0,0,0,.35);
+  opacity: 0; pointer-events: none; transition: opacity .2s ease; z-index: 900;
+}
+.backdrop.active{ opacity: 1; pointer-events: auto; }

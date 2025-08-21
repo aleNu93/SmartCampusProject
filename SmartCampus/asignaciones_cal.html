@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tareas Asignadas - Smart Campus</title>
+
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Estilos de esta pantalla -->
+  <link rel="stylesheet" href="css/Asignaciones_cal.css" />
+</head>
+<body>
+  <header>
+    <img src="images/Smart_Campus_Logo.png" alt="Logo Smart Campus" class="logo" />
+    <h1>Asignaciones</h1>
+    <!-- botón menú (igual que panel_grupo) -->
+    <button id="btnMenu" class="btn-menu"><i class="fas fa-bars"></i></button>
+  </header>
+
+  <!-- sidebar (igual que panel_grupo) -->
+  <aside id="sidebar" class="sidebar">
+    <button id="btnCerrarMenu" class="cerrar-menu"><i class="fas fa-times"></i></button>
+    <ul id="menuList" class="menu-list"></ul>
+  </aside>
+
+  <main>
+    <section class="tareas-asignadas">
+      <div class="titulo-tareas">
+        <h2>Tareas asignadas</h2>
+      </div>
+
+      <ul class="lista-tareas">
+        <!-- Se llena dinámicamente con las evaluaciones guardadas en localStorage -->
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Smart Campus. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- JS de esta pantalla -->
+  <script src="js/asignaciones_cal.js"></script>
+
+  <link rel="stylesheet" href="css/asignacion_extra.css" />
+
+</body>
+</html>
